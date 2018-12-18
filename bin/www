@@ -1,0 +1,10 @@
+var app = require('../app');
+//Connecting mongo server
+var mongoose=require('../MongooseConnector/ConnectMongoose');
+var debug = require('debug')('mean-app:server');
+var http = require('http');
+var port = '3000';
+app.set('port', port);
+//Either use http module or express module for creating a server
+var server = http.createServer(app);
+server.listen(port);
